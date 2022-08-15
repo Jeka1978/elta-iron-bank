@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @author Evgeny Borisov
@@ -16,8 +17,10 @@ import javax.persistence.Id;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+//@Table(name = "my_customer")
+//@Entity(name = "ccc")
 @Entity
-public class Customer {
+public class BankCustomer {
 
     @Id
     @GeneratedValue
@@ -28,3 +31,7 @@ public class Customer {
 
     private int balance;
 }
+
+
+
+

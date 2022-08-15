@@ -6,6 +6,9 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 /**
  * @author Evgeny Borisov
  */
@@ -16,12 +19,21 @@ public class DBFillerService {
     @Autowired
     private CustomerRepo customerRepo;
 
+    @Autowired
+    private BankRepo bankRepo;
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
     @EventListener(ContextRefreshedEvent.class)
     public void fillDB(){
-        customerRepo.save(Customer.builder().balance(10).name("Nedd Stark").build());
-        customerRepo.save(Customer.builder().balance(15).name("John Stark").build());
-        customerRepo.save(Customer.builder().balance(17).name("Robb Stark").build());
+        Bank bank = Bank.builder().balance(100).build();
+        bankRepo.save(bank);
+        customerRepo.save(BankCustomer.builder().balance(10).name("Nedd Stark").build());
+        customerRepo.save(BankCustomer.builder().balance(15).name("John Stark").build());
+        customerRepo.save(BankCustomer.builder().balance(17).name("Robb Stark").build());
     }
+
 }
 
 
