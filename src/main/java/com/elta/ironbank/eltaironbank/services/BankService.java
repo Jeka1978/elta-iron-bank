@@ -1,6 +1,9 @@
-package com.elta.ironbank.eltaironbank;
+package com.elta.ironbank.eltaironbank.services;
 
 import com.elta.iron.bank.eltaironbankstarter.NotEnoughMoneyException;
+import com.elta.ironbank.eltaironbank.Bank;
+import com.elta.ironbank.eltaironbank.BankRepo;
+import com.elta.ironbank.eltaironbank.PredictionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

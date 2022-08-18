@@ -1,8 +1,7 @@
 package com.elta.ironbank.eltaironbank;
 
+import com.elta.ironbank.eltaironbank.services.BankService;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Evgeny Borisov
